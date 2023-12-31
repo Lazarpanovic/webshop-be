@@ -1,6 +1,5 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { ProductCategory } from '../../database/entities/product-category.entity';
 import { Product } from '../../database/entities/product.entity';
 import { Repository } from 'typeorm';
 
@@ -9,8 +8,6 @@ export class ProductService {
   constructor(
     @InjectRepository(Product)
     private productRepository: Repository<Product>,
-    @InjectRepository(ProductCategory)
-    private productCategoryRepository: Repository<ProductCategory>,
   ) {}
 
   async getProducts() {
@@ -21,13 +18,9 @@ export class ProductService {
     });
   }
 
-  async getProduct(id: string) {
+  async getProductById(id: string) {
     return this.productRepository.findOneBy({
       id,
     });
-  }
-
-  async getProductCategories() {
-    return this.productCategoryRepository.find();
   }
 }

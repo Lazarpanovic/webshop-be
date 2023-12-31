@@ -4,6 +4,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { configs } from '../core/app.config';
 import { getDataSourceConfigs } from '../database/data-source';
 import { ProductModule } from './product/product.module';
+import { ProductCategoryModule } from './product-category/product-category.module';
 
 @Module({
   imports: [
@@ -16,6 +17,7 @@ import { ProductModule } from './product/product.module';
       },
     }),
     ProductModule,
+    ProductCategoryModule,
   ],
   controllers: [],
   providers: [],
