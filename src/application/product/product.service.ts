@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { ProductCategory } from 'src/database/entities/product-category.entity';
-import { Product } from 'src/database/entities/product.entity';
+import { ProductCategory } from '../../database/entities/product-category.entity';
+import { Product } from '../../database/entities/product.entity';
 import { Repository } from 'typeorm';
 
 @Injectable()
@@ -11,7 +11,7 @@ export class ProductService {
     private productRepository: Repository<Product>,
     @InjectRepository(ProductCategory)
     private productCategoryRepository: Repository<ProductCategory>,
-  ) { }
+  ) {}
 
   async getProducts() {
     return this.productRepository.find({
@@ -23,7 +23,7 @@ export class ProductService {
 
   async getProduct(id: string) {
     return this.productRepository.findOneBy({
-      id
+      id,
     });
   }
 

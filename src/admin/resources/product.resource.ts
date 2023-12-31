@@ -1,6 +1,6 @@
 import { INestApplication } from '@nestjs/common';
 import { ResourceWithOptions } from 'adminjs';
-import { Product } from 'src/database/entities/product.entity';
+import { Product } from '../../database/entities/product.entity';
 
 export const getProductResource = (
   app: INestApplication,

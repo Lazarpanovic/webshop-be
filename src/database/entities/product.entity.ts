@@ -11,7 +11,7 @@ import {
 } from 'typeorm';
 import { SCHEMA_CORE } from '../../constants';
 import { ProductCategory } from './product-category.entity';
-import { Brand } from 'src/application/product/types/product.types';
+import { Brand } from '../../application/product/types/product.types';
 import { ProductItem } from './product-item.entity';
 
 @Entity('product', { schema: SCHEMA_CORE })
@@ -32,7 +32,7 @@ export class Product extends BaseEntity {
   quantity: number;
 
   @Column({
-    name: 'img_url'
+    name: 'img_url',
   })
   imgUrl: string;
 

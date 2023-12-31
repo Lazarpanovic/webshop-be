@@ -13,7 +13,7 @@ import { ProductRes } from './dtos/res/product.dto';
 @ApiTags(SwaggerTags.PRODUCTS)
 @Controller('product')
 export class ProductController {
-  constructor(private productService: ProductService) { }
+  constructor(private productService: ProductService) {}
 
   @Get()
   async getProducts() {

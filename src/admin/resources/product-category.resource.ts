@@ -1,7 +1,7 @@
 import { INestApplication } from '@nestjs/common';
 import { ResourceWithOptions } from 'adminjs';
-import { ProductCategory } from 'src/database/entities/product-category.entity';
-import { Product } from 'src/database/entities/product.entity';
+import { ProductCategory } from '../../database/entities/product-category.entity';
+import { Product } from '../../database/entities/product.entity';
 
 export const getProductCategoryResource = (
   app: INestApplication,

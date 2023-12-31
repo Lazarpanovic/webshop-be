@@ -1,6 +1,5 @@
-import { ProductCategory } from "src/database/entities/product-category.entity";
-import { Product } from "src/database/entities/product.entity";
-import { ProductCategoryRes } from "./product-category.dto";
+import { Product } from '../../../../database/entities/product.entity';
+import { ProductCategoryRes } from './product-category.dto';
 
 export class ProductRes {
   id: string;
@@ -11,9 +10,7 @@ export class ProductRes {
   stars: number;
   productCategory: ProductCategoryRes;
 
-  constructor(
-    product: Product,
-  ) {
+  constructor(product: Product) {
     this.id = product.id;
     this.name = product.name;
     this.price = product.price;
